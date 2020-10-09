@@ -601,9 +601,6 @@ void adf_dp_trace_log_pkt(uint8_t session_id, struct sk_buff *skb,
 void adf_dp_display_proto_pkt(struct adf_dp_trace_record_s *record,
 			      uint16_t index)
 {
-	struct adf_dp_trace_proto_buf *buf =
-		(struct adf_dp_trace_proto_buf *)record->data;
-
 	DPTRACE_PRINT("DPT: %04d: %s: %s vdev_id %d\n", index,
 		record->time, adf_dp_code_to_string(record->code),
 		buf->vdev_id);
@@ -651,9 +648,6 @@ void adf_dp_trace_proto_pkt(enum ADF_DP_TRACE_ID code, uint8_t vdev_id,
 void adf_dp_display_mgmt_pkt(struct adf_dp_trace_record_s *record,
 			      uint16_t index)
 {
-	struct adf_dp_trace_mgmt_buf *buf =
-		(struct adf_dp_trace_mgmt_buf *)record->data;
-
 	DPTRACE_PRINT("DPT: %04d: %s: %s vdev_id %d", index,
 		record->time, adf_dp_code_to_string(record->code),
 		buf->vdev_id);
@@ -682,9 +676,6 @@ void adf_dp_trace_mgmt_pkt(enum ADF_DP_TRACE_ID code, uint8_t vdev_id,
 void adf_dp_display_event_record(struct adf_dp_trace_record_s *record,
 			      uint16_t index)
 {
-	struct adf_dp_trace_event_buf *buf =
-		(struct adf_dp_trace_event_buf *)record->data;
-
 	DPTRACE_PRINT("DPT: %04d: %s: %s vdev_id %d", index,
 		record->time, adf_dp_code_to_string(record->code),
 		buf->vdev_id);
